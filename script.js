@@ -17,7 +17,11 @@ function secretWord() {
 
 var main = function (input) {
   var secret = secretWord();
-  var myOutputValue = `Your guess was wrong. <br><br>Your guess was: ${input} <br>Secret words was: ${secret} <br> Correct guesses: ${correctGuesses}`;
+  var myOutputValue = `Your guess was: ${input} <br>Secret words was: ${secret} <br> Correct guesses: ${correctGuesses}`;
+  if (input != secret) {
+    correctGuesses = 0;
+    myOutputValue = `Your guess was wrong. <br><br>Your guess was: ${input} <br>Secret words was: ${secret} <br> Correct guesses: ${correctGuesses}`;
+  }
   if (input == secret) {
     correctGuesses += 1;
     myOutputValue = `Your guess was right! <br><br>Your guess was: ${input} <br>Secret words was: ${secret} <br> Correct guesses: ${correctGuesses}`;
